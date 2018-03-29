@@ -1,0 +1,9 @@
+{
+  "name": "groupq",
+  "version": "0.0.1",
+  "description": "A cross-game event creation platform.",
+  "main": "index.js",
+  "repository": "git@github.com:mjannino/groupq.git",
+  "author": "mjannino <michaeljannino@gmail.com>",
+  "license": "MIT"
+}
