@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  groupq_server:
+    build: server/
+    command: echo 'ready server'
+    volumes:
+      - server/:/srv/groupq/server
+      - groupq_server_node_modules:/srv/groupq/server/node_modules
+  groupq_client:
+    build: client/
+    command: echo 'ready client'
+    volumes:
+      - client/:/srv/groupq/client
+      - groupq_client_node_modules:/srv/groupq/client/node_modules
+
+volumes:
+  groupq_server_node_modules:
+  groupq_client_node_modules:
