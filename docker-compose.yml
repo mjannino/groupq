@@ -16,4 +16,4 @@ services:
 
 volumes:
   groupq_server_node_modules:
-  groupq_client_node_modules:
+    
