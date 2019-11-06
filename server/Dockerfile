@@ -1,10 +1,10 @@
 FROM node:10.16.3
 
-RUN mkdir /srv/groupq && chown node:node /srv/groupq
+RUN mkdir /srv/groupq/server && chown node:node /srv/groupq/server
 
 USER node
 
-WORKDIR /srv/groupq
+WORKDIR /srv/groupq/server
 
 COPY --chown=node:node package.json package-lock.json ./
 
