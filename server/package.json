@@ -1,0 +1,15 @@
+{
+  "name": "groupqserver",
+  "version": "0.0.1",
+  "description": "API for GroupQ, a group-finding application.",
+  "main": "server.js",
+  "scripts": {
+      "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike Jannino",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
