@@ -1,25 +1,19 @@
 {
-   "name": "groupq",
-   "version": "0.0.1",
-   "description": "Group up with your humes",
-   "devDependencies": {
-      "ts-node": "3.3.0",
-      "@types/node": "^8.0.29",
-      "typescript": "3.3.3333"
-   },
-   "dependencies": {
-      "bcryptjs": "^2.4.3",
-      "body-parser": "^1.18.1",
-      "class-validator": "^0.10.1",
-      "cors": "^2.8.5",
-      "express": "^4.15.4",
-      "helmet": "^3.21.1",
-      "jsonwebtoken": "^8.5.1",
-      "reflect-metadata": "^0.1.10",
-      "ts-node-dev": "^1.0.0-pre.43",
-      "typeorm": "0.2.19"
-   },
-   "scripts": {
-      "start": "ts-node src/index.ts"
-   }
+  "name": "groupqserver",
+  "version": "0.0.1",
+  "description": "API for GroupQ, a group-finding application.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "nodemon --inspect=0.0.0.0:9229 server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike Jannino",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
 }

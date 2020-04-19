@@ -1,14 +1,16 @@
-FROM node:10.16.3
+FROM mhart/alpine-node:12
+EXPOSE 3000 9229
 
-RUN mkdir /srv/groupq && mkdir /srv/groupq/server && chown node:node /srv/groupq/server
+# create application directory on image
+WORKDIR /opt/app/server 
 
-USER node
+# copy package and package-lock.json
+COPY package*.json ./
 
-WORKDIR /srv/groupq/server
+RUN npm ci
 
-COPY --chown=node:node package.json ./
+# bundle app source
 
-RUN npm install
+COPY . .
 
-# TODO: Can remove once we have some dependencies in package.json.
-RUN mkdir -p node_modules
+CMD ./scripts/start.sh
