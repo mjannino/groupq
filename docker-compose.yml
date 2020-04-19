@@ -4,15 +4,27 @@ services:
         build: ./server
         depends_on:
             - postgres
+        env_file: ./.env
         command: sh scripts/start.sh
         ports:
             - "3000:3000"
             - "9229:9229"
         
+    # Infrastructure
     postgres:
         image: postgres:11.5-alpine
         environment:
             POSTGRES_DB: groupq
             POSTGRES_USER: gqadmin
         ports:
-            - "5432:5432"
+        - '5432:5432'
+
+    gitlab:
+        image: postgres:11.5-alpine
+        env_file: ./.env
+        ports:
+        - '54321:54321'
+        depends_on:
+        - postgres
+        volumes:
+        - ./server/scripts:/opt/server/scripts
